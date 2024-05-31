@@ -1,21 +1,14 @@
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
 from tradenetwork.filter import SupplierFilter
 from tradenetwork.models import Supplier, Product
-from tradenetwork.serializers import (
-    SupplierUpdateSerializer,
-    SupplierSerializer,
-    ProductSerializer,
-)
+from tradenetwork.serializers import ProductSerializer, SupplierUpdateSerializer, SupplierSerializer
 from users.permissions import IsOwner, IsAdmin, IsActive
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    """
-    Контроллер для модели Продукты
-    """
+    """Контроллер для модели Продукты."""
 
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
@@ -39,9 +32,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 
 
 class SupplierViewSet(viewsets.ModelViewSet):
-    """
-    Контроллер для модели Поставщики
-    """
+    """Контроллер для модели Поставщики."""
 
     queryset = Supplier.objects.all()
     filter_backends = [DjangoFilterBackend]

@@ -30,6 +30,7 @@ class SupplierUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Supplier
         fields = "__all__"
+        # запрет на обновление поля «Задолженность перед поставщиком»
         read_only_fields = [
             "debt_to_supplier"
-        ]  # запрет на обновление поля «Задолженность перед поставщиком»
+        ]

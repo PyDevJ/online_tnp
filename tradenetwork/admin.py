@@ -4,9 +4,7 @@ from tradenetwork.models import Supplier, Product
 
 @admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
-    """
-    Ссылка на поставщика в админ-панели
-    """
+    """Ссылка на "Поставщика" в админ-панели."""
 
     list_display = (
         "author",
@@ -28,16 +26,12 @@ class SupplierAdmin(admin.ModelAdmin):
 
     @admin.action(description="Clearing the debt to the supplier")
     def clear_debt(self, request, queryset):
-        """
-        «admin action», очищающий задолженность перед поставщиком у выбранных объектов.
-        """
+        """«admin action», очищающий задолженность перед поставщиком у выбранных объектов."""
         queryset.update(debt_to_supplier=0)
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    """
-    Ссылка на товары в админ-панели
-    """
+    """Ссылка на "Продукты" в админ-панели."""
 
     list_display = ("title", "product_model", "launch_date")

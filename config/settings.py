@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'users',
     'tradenetwork',
     'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -144,6 +145,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
+        # Установка прав по умолчанию только с авторизацией
         'rest_framework.permissions.IsAuthenticated',
     ]
 }

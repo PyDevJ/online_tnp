@@ -9,7 +9,7 @@ class Product(models.Model):
 
     title = models.CharField(max_length=255, verbose_name="название")
     product_model = models.CharField(max_length=255, verbose_name="модель")
-    launch_date = models.DateField(verbose_name="дата выхода товара на рынок")
+    launch_date = models.DateField(verbose_name="дата выхода продукта на рынок")
 
     def __str__(self):
         return f"{self.title} {self.product_model}"

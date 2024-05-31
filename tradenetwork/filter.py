@@ -3,9 +3,7 @@ from tradenetwork.models import Supplier
 
 
 class SupplierFilter(django_filters.rest_framework.FilterSet):
-    """
-    Возможность фильтрации объектов по определенной стране
-    """
+    """Возможность фильтрации объектов по определенной стране."""
 
     title = django_filters.CharFilter(
         field_name="country",
